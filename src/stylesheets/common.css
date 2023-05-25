@@ -1,0 +1,11 @@
+.common_inner {
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+}
