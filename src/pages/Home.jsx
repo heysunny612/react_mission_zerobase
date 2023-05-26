@@ -2,6 +2,7 @@ import Products from '../components/Product/Products';
 import '../stylesheets/pages/Home.css';
 
 export default function Home() {
+  // TODO: 4개씩만 나오게하기 
   return (
     <div className='common_inner'>
       <section className='main_section'>

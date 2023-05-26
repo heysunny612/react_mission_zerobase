@@ -6,11 +6,13 @@ export default class ProductsApi {
       baseURL: 'https://fakestoreapi.com/products/',
     });
   }
+  //카테고리가 있다면 -> 예외처리 / 없다면 -> 모두 보여주기
   async getProducts(category) {
     return category
       ? this.#productsFromCategory(category)
       : this.#allProducts();
   }
+
   //특정카테고리 상품
   async #productsFromCategory(category) {
     // 카테고리가 패션이라면 예외적 처리

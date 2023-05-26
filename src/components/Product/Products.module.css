@@ -4,3 +4,21 @@
   grid-template-rows: 1;
   gap: 20px;
 }
+
+@media (max-width: 1024px) {
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .products {
+    padding: 0 10px;
+    overflow-x: auto;
+    grid-template-columns: repeat(4, 330px);
+  }
+}

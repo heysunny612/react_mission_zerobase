@@ -1,4 +1,9 @@
 :root {
   --color-grey: rgb(243, 244, 246, 1);
   --color-navy: rgb(59, 130, 246, 1);
+  --color-white: #ffffff;
+}
+
+html.dark {
+  --color-white: rgb(59, 130, 246, 1);
 }
