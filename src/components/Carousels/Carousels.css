@@ -1,0 +1,21 @@
+.carousel-root {
+  margin-bottom: 70px;
+}
+.carousel_description {
+  max-height: 650px;
+}
+.carousel_description .text_area {
+  position: absolute;
+  top: 50%;
+  left: 18%;
+  text-align: left;
+  transform: translateY(-50%);
+}
+.carousel_description .text_area .title {
+  font-size: 40px;
+  font-weight: 800;
+}
+.carousel_description .text_area p {
+  margin-bottom: 20px;
+  color: #fff;
+}

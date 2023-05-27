@@ -1,0 +1,53 @@
+.item {
+  display: flex;
+  align-items: center;
+}
+.image {
+  flex-basis: 15%;
+  padding: 20px;
+  text-align: center;
+}
+.image img {
+  width: 100%;
+  object-fit: contain;
+  height: 12rem;
+}
+.info {
+  margin-left: 50px;
+}
+.title {
+  font-size: 20px;
+}
+.price {
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+
+.buttons button {
+  padding: 10px;
+  background-color: var(--color-purple);
+  transition: all 200ms ease-in-out;
+}
+.buttons button:hover {
+  background-color: var(--color-purple-deep);
+  transform: scale(1.05);
+}
+.buttons svg {
+  font-size: 20px;
+  color: #fff;
+}
+.count {
+  padding: 0 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.trash {
+  margin-left: 20px;
+  border-radius: 10px;
+}
+.minus {
+  border-radius: 10px 0 0 10px;
+}
+.plus {
+  border-radius: 0 10px 10px 0;
+}

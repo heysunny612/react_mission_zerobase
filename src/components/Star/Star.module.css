@@ -1,0 +1,18 @@
+.star_rating {
+  display: flex;
+  align-items: center;
+}
+
+.star_rating svg {
+  font-size: 35px;
+  color: var(--color-yellow);
+}
+
+.star {
+  padding-left: 10px;
+}
+
+.star,
+.count {
+  margin-right: 5px;
+}

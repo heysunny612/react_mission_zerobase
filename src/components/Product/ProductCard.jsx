@@ -1,13 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 import styles from './ProductCard.module.css';
 
-export default function ProductCard({
-  product: { id, title, price, image },
-  breadcrumbs,
-}) {
+export default function ProductCard({ product: { id, title, price, image } }) {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate(`/product/${id}`, { state: breadcrumbs });
+    navigate(`/product/${id}`);
   };
   return (
     <li className={styles.product} role='button' onClick={handleClick}>

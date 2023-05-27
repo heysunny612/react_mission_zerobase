@@ -1,22 +1,24 @@
+import CartList from '../components/Cart/CartList';
 import { useCartContext } from '../context/CartContext';
+import '../stylesheets/pages/Cart.scss';
+import CartPrice from '../components/Cart/CartPrice';
 
 export default function Cart() {
   const { cartItems } = useCartContext();
 
-  console.log(cartItems);
   return (
-    <div>
+    <section className='cart_wrap common_inner'>
       {cartItems.length < 1 && <p>장바구니에 담긴 상품이 없습니다</p>}
       {cartItems && (
-        <ul>
-          {cartItems.map((item) => (
-            <li key={item.id}>
-              {item.title}
-              {item.count}
-            </li>
-          ))}
-        </ul>
+        <>
+          <ul>
+            {cartItems.map((item) => (
+              <CartList key={item.id} item={item} />
+            ))}
+          </ul>
+          <CartPrice items={cartItems} />
+        </>
       )}
-    </div>
+    </section>
   );
 }

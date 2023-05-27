@@ -137,3 +137,9 @@ body {
 a {
   text-decoration: none;
 }
+button {
+  border: 0 none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+}

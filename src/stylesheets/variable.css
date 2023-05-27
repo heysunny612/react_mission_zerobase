@@ -1,7 +1,12 @@
 :root {
   --color-grey: rgb(243, 244, 246, 1);
-  --color-navy: rgb(59, 130, 246, 1);
+  --color-navy: #1f2937;
   --color-white: #ffffff;
+  --color-black: #000000;
+  --color-purple: #570df8;
+  --color-purple-deep: #4506cb;
+  --color-yellow: #facc15;
+  --color-yellow-light: #fef8dc;
 }
 
 html.dark {
