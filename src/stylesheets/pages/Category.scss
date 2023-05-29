@@ -1,0 +1,28 @@
+.sort_list {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.sort_list li {
+  position: relative;
+  margin-left: 15px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.sort_list li:not(:first-child)::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: -8px;
+  display: block;
+  width: 2px;
+  height: 12px;
+  background-color: var(--color-grey-deep);
+}
+.sort_list li.active,
+.sort_list li:hover {
+  color: var(--color-purple);
+  font-weight: 700;
+}

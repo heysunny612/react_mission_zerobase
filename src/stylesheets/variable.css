@@ -1,5 +1,6 @@
 :root {
   --color-grey: rgb(243, 244, 246, 1);
+  --color-grey-deep: #d1d5db;
   --color-navy: #1f2937;
   --color-white: #ffffff;
   --color-black: #000000;
@@ -7,6 +8,7 @@
   --color-purple-deep: #4506cb;
   --color-yellow: #facc15;
   --color-yellow-light: #fef8dc;
+  --color-red: #ff0000;
 }
 
 html.dark {

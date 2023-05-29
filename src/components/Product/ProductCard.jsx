@@ -1,11 +1,23 @@
 import { useNavigate } from 'react-router-dom';
 import styles from './ProductCard.module.css';
+import Star from '../Star/Star';
 
-export default function ProductCard({ product: { id, title, price, image } }) {
+export default function ProductCard({
+  product: {
+    id,
+    title,
+    price,
+    image,
+    rating: { rate, count },
+  },
+  category,
+  filter,
+}) {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate(`/product/${id}`);
+    navigate(`/${category}/product/${id}`);
   };
+
   return (
     <li className={styles.product} role='button' onClick={handleClick}>
       <div className={styles.img_area}>
@@ -13,7 +25,11 @@ export default function ProductCard({ product: { id, title, price, image } }) {
       </div>
       <div className={styles.info_area}>
         <p className={styles.title}>{title}</p>
-        <p>${price}</p>
+
+        <div className={styles.price}>
+          <p>${Math.round(price)}</p>
+          {filter && <Star stars={rate} count={count} small />}
+        </div>
       </div>
     </li>
   );

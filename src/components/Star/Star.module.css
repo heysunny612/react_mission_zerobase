@@ -16,3 +16,8 @@
 .count {
   margin-right: 5px;
 }
+
+.star_rating.small,
+.star_rating.small svg {
+  font-size: 14px;
+}

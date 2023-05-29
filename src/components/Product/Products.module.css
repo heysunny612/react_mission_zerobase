@@ -16,9 +16,12 @@
   }
 }
 @media (max-width: 640px) {
-  .products {
+  .products.scrollX {
     padding: 0 10px;
     overflow-x: auto;
     grid-template-columns: repeat(4, 330px);
+  }
+  .products {
+    grid-template-columns: repeat(1, 1fr);
   }
 }

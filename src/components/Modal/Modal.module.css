@@ -7,22 +7,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 101;
 }
 .modal_bg {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: black;
   opacity: 0.5;
+  z-index: 100;
 }
 
 .modal_box {
   padding: 30px;
   min-width: 450px;
   background-color: var(--color-white);
-  z-index: 999;
   border-radius: 10px;
 }
 .modal_box p {
@@ -35,6 +36,8 @@
 }
 
 .buttons {
+  display: flex;
+  justify-content: flex-end;
   margin-top: 50px;
   text-align: right;
 }

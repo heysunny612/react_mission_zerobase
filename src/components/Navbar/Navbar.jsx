@@ -1,50 +1,69 @@
 import styles from './Navbar.module.css';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { useThemeContext } from '../../context/ThemeContext';
 import { useCartContext } from '../../context/CartContext';
-
-const categories = [
-  { path: 'all', title: '모든 상품' },
-  { path: 'fashion', title: '패션' },
-  { path: 'jewelery', title: '액세서리' },
-  { path: 'electronics', title: '디지털' },
-];
+import {
+  MdOutlineDarkMode,
+  MdOutlineLightMode,
+  MdOutlineShoppingCart,
+} from 'react-icons/md';
+import { GrMenu } from 'react-icons/gr';
+import { categories } from '../../Categories';
+import { useState } from 'react';
+import { useBodyScrollLock } from '../../hooks/useLockBodyScroll';
+import Search from '../Search/Search';
 
 export default function Navbar() {
-  const navigate = useNavigate();
   const { cartItems } = useCartContext();
-  const handleClick = (category) => {
-    navigate(`/${category.path}`, { state: category });
-  };
   const { mode, toggleMode } = useThemeContext();
   const cartTotal = getCartTotalCount(cartItems);
+  const [mobileNav, setMobileNav] = useState(false);
+  const { lockScroll, unLockScroll } = useBodyScrollLock();
+  const toggleNav = () => {
+    if (window.innerWidth > 768) return;
+    mobileNav ? unLockScroll() : lockScroll();
+    setMobileNav((prev) => !prev);
+  };
+
   return (
     <header className={styles.header}>
-      <h1 className={styles.logo}>
-        <Link to='/'>React Shop</Link>
-      </h1>
-      <nav className={styles.nav}>
-        <ul>
-          {categories.map((category) => (
-            <li
-              key={category.path}
-              role='button'
-              onClick={() => handleClick(category)}
-            >
-              {category.title}
-            </li>
-          ))}
-        </ul>
-      </nav>
-      <div className={styles.search}>
-        <button onClick={toggleMode}>
-          {mode ? 'Light Mode' : 'Dark Mode'}
-        </button>
-        <form>
-          <input type='text' />
-        </form>
-        <Link to='/cart'>장바구니{cartTotal}</Link>
+      <div className={styles.common_inner}>
+        <div className={styles.logo_area}>
+          <button className={styles.toggle} onClick={toggleNav}>
+            <GrMenu />
+          </button>
+          <h1 className={styles.logo}>
+            <Link to='/'>React Shop</Link>
+          </h1>
+        </div>
+        <nav className={`${styles.nav} ${mobileNav && styles.active}`}>
+          <div className={styles.nav_bg} onClick={toggleNav}></div>
+          <ul>
+            {categories.map((category) => (
+              <li key={category.path}>
+                <NavLink
+                  className={({ isActive }) => (isActive ? styles.active : '')}
+                  to={category.path}
+                  onClick={toggleNav}
+                >
+                  {category.title}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <div className={styles.search}>
+          <button onClick={toggleMode}>
+            {mode ? <MdOutlineLightMode /> : <MdOutlineDarkMode />}
+          </button>
+          <Search />
+          <div className={styles.cart}>
+            <Link to='/cart'>
+              <MdOutlineShoppingCart />
+              <span>{cartTotal}</span>
+            </Link>
+          </div>
+        </div>
       </div>
     </header>
   );

@@ -1,0 +1,26 @@
+.bread {
+  padding: 30px 0;
+  display: flex;
+}
+
+.bread li {
+  position: relative;
+  margin: 0 10px;
+  color: var(--color-black);
+}
+.bread li a {
+  color: inherit;
+}
+.bread li:not(:first-of-type)::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -12px;
+  display: block;
+  height: 7px;
+  width: 7px;
+  border-top: 1px solid var(--color-grey-deep);
+  border-right: 1px solid var(--color-grey-deep);
+
+  transform: rotate(45deg) translateX(-50%);
+}

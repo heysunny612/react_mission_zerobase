@@ -12,8 +12,8 @@ export default function CartPrice({ items }) {
   const toggleModal = () => setModal((prev) => !prev);
   return (
     <div className={styles.cart_price}>
-      <span>총 :{totalPrice.toLocaleString()}</span>
-      <Button type='accent' onClick={() => toggleModal()}>
+      <span>총 :{Math.round(totalPrice).toLocaleString()}</span>
+      <Button type='accent' onClick={() => setModal(true)}>
         구매하기
       </Button>
       {modal === true ? <Modal toggleModal={toggleModal} /> : null}

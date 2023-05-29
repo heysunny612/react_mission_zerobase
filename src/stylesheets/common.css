@@ -1,6 +1,7 @@
 .common_inner {
   margin: 0 auto;
   max-width: 1400px;
+  min-height: 58vh;
 }
 
 h2 {
@@ -8,4 +9,10 @@ h2 {
   text-align: center;
   font-size: 32px;
   font-weight: bold;
+}
+
+@media (max-width: 1024px) {
+  .common_inner {
+    max-width: 95%;
+  }
 }

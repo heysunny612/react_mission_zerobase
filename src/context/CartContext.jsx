@@ -7,7 +7,6 @@ const fromLocalStorage = () => {
   const cartItems = localStorage.getItem(CART_ITEMS);
   return cartItems ? JSON.parse(cartItems) : [];
 };
-
 export const CartContextProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState(() => fromLocalStorage());
 

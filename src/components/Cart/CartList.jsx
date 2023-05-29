@@ -5,7 +5,6 @@ import { BsTrashFill } from 'react-icons/bs';
 
 export default function CartList({ item }) {
   const { cartItems, setCartItems } = useCartContext();
-
   const handleQuantity = (id, quantity) => {
     const found = cartItems.find((item) => item.id === id);
     const idx = cartItems.indexOf(found);
@@ -32,7 +31,7 @@ export default function CartList({ item }) {
       <div className={styles.info}>
         <h2 className={styles.title}>{item.title}</h2>
         <p className={styles.price}>
-          $ {Math.floor(item.price * item.count).toLocaleString()}
+          $ {Math.round(item.price * item.count).toLocaleString()}
         </p>
         <div className={styles.buttons}>
           <button

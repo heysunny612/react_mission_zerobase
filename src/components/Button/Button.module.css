@@ -8,7 +8,6 @@
   letter-spacing: -0.5px;
   background-color: var(--color-white);
   transition: all 200ms ease-in-out;
-  display: flex;
   align-items: center;
 }
 .button:hover {
@@ -19,7 +18,7 @@
 
 .accent {
   background-color: var(--color-purple);
-  color: var(--color-white);
+  color: #fff;
   border: 0 none;
 }
 

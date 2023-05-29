@@ -1,0 +1,9 @@
+.empty {
+  text-align: center;
+  padding: 50px;
+  border: 1px solid var(--color-grey);
+}
+
+.empty p {
+  margin-bottom: 20px;
+}

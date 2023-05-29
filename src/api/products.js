@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 export default class ProductsApi {
   constructor() {
     this.httpClient = axios.create({
@@ -8,9 +7,9 @@ export default class ProductsApi {
   }
   //카테고리가 있다면 -> 예외처리 / 없다면 -> 모두 보여주기
   async getProducts(category) {
-    return category
-      ? this.#productsFromCategory(category)
-      : this.#allProducts();
+    return category === 'all'
+      ? this.#allProducts()
+      : this.#productsFromCategory(category);
   }
 
   //특정카테고리 상품
@@ -32,7 +31,7 @@ export default class ProductsApi {
   }
 
   async #allProducts() {
-    return this.httpClient.get().then((data) => data.data);
+    return this.httpClient.get().then((data) => data.data.reverse());
   }
 
   //상품 상세페이지

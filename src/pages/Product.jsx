@@ -1,16 +1,19 @@
+import '../stylesheets/pages/Product.scss';
 import { useQuery } from 'react-query';
 import { useParams, useNavigate } from 'react-router-dom';
-import ProductsApi from '../api/products';
 import { useCartContext } from '../context/CartContext';
-import '../stylesheets/pages/Product.scss';
+import { categories } from '../Categories';
+import ProductsApi from '../api/products';
 import Button from '../components/Button/Button';
 import Star from '../components/Star/Star';
+import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
 
 export default function Product() {
   const { cartItems, setCartItems } = useCartContext();
   const navigate = useNavigate();
   const api = new ProductsApi();
-  const { productId } = useParams();
+  const { category, productId } = useParams();
+  const found = categories.find((c) => c.path === category);
   const {
     isLoading,
     error,
@@ -50,21 +53,24 @@ export default function Product() {
       {isLoading && <p>로딩중입니다</p>}
       {error && <p>에러입니다</p>}
       {product && (
-        <article className='detail_wrap'>
-          <div className='detail_img'>
-            <img src={product.image} alt={product.title} width='100' />
-          </div>
-          <div className='detail_info'>
-            <h2>{product.title}</h2>
-            <p>{product.description}</p>
-            <Star stars={product.rating.rate} count={product.rating.count} />
-            <p className='detail_price'>${Math.floor(product.price)}</p>
-            <Button onClick={handleCart} type='accent'>
-              장바구니에 담기
-            </Button>
-            <Button onClick={handleMoveCart}>장바구니로 이동</Button>
-          </div>
-        </article>
+        <>
+          <Breadcrumbs breadcrumbs={[found.title, product.title]} />
+          <article className='detail_wrap'>
+            <div className='detail_img'>
+              <img src={product.image} alt={product.title} width='100' />
+            </div>
+            <div className='detail_info'>
+              <h2>{product.title}</h2>
+              <p>{product.description}</p>
+              <Star stars={product.rating.rate} count={product.rating.count} />
+              <p className='detail_price'>${Math.round(product.price)}</p>
+              <Button onClick={handleCart} type='accent'>
+                장바구니에 담기
+              </Button>
+              <Button onClick={handleMoveCart}>장바구니로 이동</Button>
+            </div>
+          </article>
+        </>
       )}
     </section>
   );
