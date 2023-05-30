@@ -25,7 +25,6 @@ export default function ProductCard({
       </div>
       <div className={styles.info_area}>
         <p className={styles.title}>{title}</p>
-
         <div className={styles.price}>
           <p>${Math.round(price)}</p>
           {filter && <Star stars={rate} count={count} small />}

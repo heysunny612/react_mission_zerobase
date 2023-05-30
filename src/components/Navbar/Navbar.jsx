@@ -6,6 +6,7 @@ import {
   MdOutlineDarkMode,
   MdOutlineLightMode,
   MdOutlineShoppingCart,
+  MdSearch,
 } from 'react-icons/md';
 import { GrMenu } from 'react-icons/gr';
 import { categories } from '../../Categories';
@@ -14,15 +15,21 @@ import { useBodyScrollLock } from '../../hooks/useLockBodyScroll';
 import Search from '../Search/Search';
 
 export default function Navbar() {
+  const [mobileNav, setMobileNav] = useState(false);
+  const [mobileSearch, setMobileSearch] = useState(false);
   const { cartItems } = useCartContext();
   const { mode, toggleMode } = useThemeContext();
   const cartTotal = getCartTotalCount(cartItems);
-  const [mobileNav, setMobileNav] = useState(false);
+
   const { lockScroll, unLockScroll } = useBodyScrollLock();
   const toggleNav = () => {
     if (window.innerWidth > 768) return;
     mobileNav ? unLockScroll() : lockScroll();
     setMobileNav((prev) => !prev);
+  };
+
+  const handleSearch = () => {
+    setMobileSearch((prev) => !prev);
   };
 
   return (
@@ -52,11 +59,14 @@ export default function Navbar() {
             ))}
           </ul>
         </nav>
-        <div className={styles.search}>
+        <div className={styles.side_area}>
           <button onClick={toggleMode}>
             {mode ? <MdOutlineLightMode /> : <MdOutlineDarkMode />}
           </button>
-          <Search />
+          <button className={styles.btn_search} onClick={handleSearch}>
+            <MdSearch />
+          </button>
+          <Search mobileSearch={mobileSearch} />
           <div className={styles.cart}>
             <Link to='/cart'>
               <MdOutlineShoppingCart />

@@ -12,5 +12,13 @@
 }
 
 html.dark {
-  --color-white: rgb(59, 130, 246, 1);
+  --color-grey: #545d6c;
+
+  --color-grey-deep: #d1d5db;
+  --color-navy: #a6adbb;
+  --color-white: #191d24;
+  --color-black: #ffffff;
+}
+html.dark body {
+  background-color: #2a303c;
 }

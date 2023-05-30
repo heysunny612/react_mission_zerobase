@@ -15,6 +15,7 @@
 .star,
 .count {
   margin-right: 5px;
+  color: var(--color-black);
 }
 
 .star_rating.small,

@@ -1,0 +1,79 @@
+/*-------------스켈리톤 상품 리스트 -------------*/
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1;
+  gap: 20px;
+}
+
+.product {
+  border-radius: 20px;
+  border: 1px solid var(--color-grey);
+  display: flex;
+  flex-direction: column;
+  height: 450px;
+  background-color: var(--color-white);
+}
+
+.info_area {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-items: center;
+  padding: 20px;
+  border-radius: 0 0 20px 20px;
+  flex: 1 1 auto;
+}
+
+@media (max-width: 1024px) {
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .products.scrollX {
+    padding: 0 10px;
+    overflow-x: auto;
+    grid-template-columns: repeat(4, 330px);
+  }
+  .products {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/*-------------스켈리톤 상품 디테일 -------------*/
+
+.detail {
+  padding-top: 100px;
+  display: flex;
+  align-items: center;
+}
+.detail_img {
+  flex-basis: 20%;
+  flex-shrink: 0;
+  margin-right: 30px;
+}
+
+.detail_info {
+  width: 100%;
+}
+
+.detail_info p {
+  margin-bottom: 15px;
+}
+
+@media (max-width: 640px) {
+  .detail {
+    flex-direction: column;
+  }
+  .detail_img {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}

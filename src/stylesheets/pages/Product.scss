@@ -6,9 +6,11 @@
 
   //상품 이미지
   .detail_img {
-    flex-basis: 20%;
+    flex-basis: auto;
     flex-shrink: 0;
     margin-right: 30px;
+    padding: 15px;
+    background-color: #ffffff;
 
     img {
       object-fit: contain;
@@ -38,6 +40,21 @@
     }
     button {
       margin-right: 15px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .detail_wrap {
+    flex-direction: column;
+
+    .detail_img {
+      width: 100%;
+      margin-right: 0px;
+    }
+
+    .detail_info {
+      margin-top: 30px;
     }
   }
 }

@@ -11,7 +11,7 @@ export default function Home() {
         {categories.map((category) => (
           <section className='main_section' key={category.id}>
             <h2>{category.path === 'all' ? 'NEW ARRIVAL' : category.title}</h2>
-            <Products category={category.path} scrollX max={4} />
+            <Products category={category.path} scrollX max={4} skeleton={4} />
           </section>
         ))}
       </div>

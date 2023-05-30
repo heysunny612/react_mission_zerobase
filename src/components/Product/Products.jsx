@@ -5,7 +5,7 @@ import ProductsApi from '../../api/products';
 import 'react-loading-skeleton/dist/skeleton.css';
 import Loading from '../Loading/Loading';
 
-export default function Products({ category, scrollX, max, filter }) {
+export default function Products({ category, scrollX, max, filter, skeleton }) {
   const api = new ProductsApi();
   const {
     isLoading,
@@ -19,7 +19,7 @@ export default function Products({ category, scrollX, max, filter }) {
   const filteredItems = products && getFilteredItems(products, filter); // 카테고리 페이지 아이템 정렬순
   return (
     <>
-      {isLoading && <Loading />}
+      {isLoading && <Loading type='list' count={skeleton} />}
       {error && <p>에러</p>}
       {products && (
         <ul className={`${styles.products} ${scrollX ? styles.scrollX : null}`}>

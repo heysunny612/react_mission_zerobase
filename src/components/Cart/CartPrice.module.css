@@ -4,6 +4,7 @@
   right: 0;
   display: flex;
   align-items: center;
+  color: var(--color-black);
 }
 .cart_price span {
   font-size: 24px;

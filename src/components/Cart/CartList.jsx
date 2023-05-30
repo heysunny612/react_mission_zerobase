@@ -2,6 +2,7 @@ import { useCartContext } from '../../context/CartContext';
 import styles from './CartList.module.css';
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 import { BsTrashFill } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 export default function CartList({ item }) {
   const { cartItems, setCartItems } = useCartContext();
@@ -26,7 +27,13 @@ export default function CartList({ item }) {
   return (
     <li key={item.id} className={styles.item}>
       <div className={styles.image}>
-        <img src={item.image} alt={item.title} />
+        <Link
+          to={`/${
+            item.category.includes('clothing') ? 'fashion' : item.category
+          }/product/${item.id}`}
+        >
+          <img src={item.image} alt={item.title} />
+        </Link>
       </div>
       <div className={styles.info}>
         <h2 className={styles.title}>{item.title}</h2>

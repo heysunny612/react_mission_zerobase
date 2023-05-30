@@ -10,6 +10,7 @@
   font-size: 15px;
   font-weight: 500;
   cursor: pointer;
+  color: var(--color-black);
 }
 .sort_list li:not(:first-child)::before {
   content: '';
@@ -25,4 +26,14 @@
 .sort_list li:hover {
   color: var(--color-purple);
   font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .sort_list {
+    justify-content: space-around;
+    margin-top: 30px;
+  }
+  .sort_list li:not(:first-child)::before {
+    display: none;
+  }
 }

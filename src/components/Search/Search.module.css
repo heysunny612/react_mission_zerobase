@@ -35,7 +35,7 @@
   padding: 15px 10px;
   font-size: 14px;
   line-height: 20px;
-  color: var(--color-black-);
+  color: var(--color-black);
 }
 
 .search_list li.active a {
@@ -48,5 +48,22 @@
 @media (max-width: 640px) {
   .search {
     display: none;
+  }
+  .search.active {
+    position: absolute;
+    top: 75px;
+    left: 0;
+    display: block !important;
+    width: 100%;
+  }
+
+  .search input[type='text'] {
+    margin: 0;
+    width: 100%;
+    border-radius: 0px;
+  }
+
+  .search_list {
+    top: 40px;
   }
 }

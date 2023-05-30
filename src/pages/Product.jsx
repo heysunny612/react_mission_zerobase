@@ -7,6 +7,7 @@ import ProductsApi from '../api/products';
 import Button from '../components/Button/Button';
 import Star from '../components/Star/Star';
 import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
+import Loading from '../components/Loading/Loading';
 
 export default function Product() {
   const { cartItems, setCartItems } = useCartContext();
@@ -50,11 +51,14 @@ export default function Product() {
 
   return (
     <section className='common_inner'>
-      {isLoading && <p>로딩중입니다</p>}
+      {isLoading && <Loading type='detail' />}
       {error && <p>에러입니다</p>}
       {product && (
         <>
-          <Breadcrumbs breadcrumbs={[found.title, product.title]} />
+          <Breadcrumbs
+            breadcrumbs={[found.title, product.title]}
+            type='detail'
+          />
           <article className='detail_wrap'>
             <div className='detail_img'>
               <img src={product.image} alt={product.title} width='100' />
@@ -64,6 +68,7 @@ export default function Product() {
               <p>{product.description}</p>
               <Star stars={product.rating.rate} count={product.rating.count} />
               <p className='detail_price'>${Math.round(product.price)}</p>
+
               <Button onClick={handleCart} type='accent'>
                 장바구니에 담기
               </Button>

@@ -9,6 +9,7 @@ h2 {
   text-align: center;
   font-size: 32px;
   font-weight: bold;
+  color: var(--color-black);
 }
 
 @media (max-width: 1024px) {

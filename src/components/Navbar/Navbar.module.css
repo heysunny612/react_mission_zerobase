@@ -61,12 +61,12 @@
   background-color: var(--color-grey-deep);
 }
 
-.search {
+.side_area {
   display: flex;
   align-items: center;
 }
 
-.search svg {
+.side_area svg {
   font-size: 28px;
   color: var(--color-black);
 }
@@ -92,7 +92,9 @@
   font-size: 20px;
   margin-right: 10px;
   padding: 10px;
+  background-color: var(--color-grey);
 }
+
 .toggle:hover {
   background-color: var(--color-grey);
 }
@@ -108,6 +110,11 @@
   z-index: 99;
 }
 
+/*모바일 검색메뉴*/
+.btn_search {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .nav ul {
     flex-direction: column;
@@ -120,14 +127,14 @@
     transition: all 0.5s ease;
     overflow-y: hidden;
     z-index: 999;
-    background: #fff;
+    background: var(--color-white);
   }
 
   .nav.active ul {
     left: 0;
     opacity: 1;
     transition: all 0.5s ease;
-    color: #fff;
+    color: #000;
   }
   .nav.active .nav_bg {
     display: block;
@@ -140,5 +147,8 @@
 @media (max-width: 640px) {
   .form {
     display: none;
+  }
+  .btn_search {
+    display: block;
   }
 }

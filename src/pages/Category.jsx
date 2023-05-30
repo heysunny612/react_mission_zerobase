@@ -30,7 +30,7 @@ export default function Category() {
           ))}
         </ul>
       )}
-      <Products category={category} filter={filter} />
+      <Products category={category} filter={filter} skeleton={8} />
     </section>
   );
 }

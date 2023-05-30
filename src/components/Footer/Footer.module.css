@@ -17,10 +17,12 @@
 }
 .footer ul li svg {
   font-size: 24px;
+  color: var(--color-black);
 }
 
 .footer p {
   margin-bottom: 30px;
+  color: var(--color-black);
 }
 .footer a {
   color: var(--color-black);

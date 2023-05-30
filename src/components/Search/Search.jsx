@@ -4,7 +4,7 @@ import { useQuery } from 'react-query';
 import { Link, useNavigate } from 'react-router-dom';
 import ProductsApi from '../../api/products';
 
-export default function Search() {
+export default function Search({ mobileSearch }) {
   const [keyword, setKeyword] = useState(''); // 사용자가 입력하는 키워드
   const [searchItems, setSearchItems] = useState([]); // 검색된 리스트
   const [selectedItem, setSelectedItem] = useState(-1); // 키보드로 선택된 아이템
@@ -96,7 +96,7 @@ export default function Search() {
   }, [hasSearchItems]);
 
   return (
-    <div className={styles.search}>
+    <div className={`${styles.search} ${mobileSearch ? styles.active : null}`}>
       <input
         type='text'
         placeholder='검색'
