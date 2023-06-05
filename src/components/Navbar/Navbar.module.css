@@ -130,6 +130,10 @@
     background: var(--color-white);
   }
 
+  .nav ul li {
+    margin: 15px 0;
+  }
+
   .nav.active ul {
     left: 0;
     opacity: 1;

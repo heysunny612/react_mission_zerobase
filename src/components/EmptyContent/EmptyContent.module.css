@@ -6,4 +6,5 @@
 
 .empty p {
   margin-bottom: 20px;
+  color: var(--color-black);
 }
