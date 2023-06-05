@@ -4,11 +4,14 @@ import './Carousels.css';
 import Button from '../Button/Button';
 import { useNavigate } from 'react-router-dom';
 import { BsArrowRight } from 'react-icons/bs';
+import imgFashion from '../../assets/img_shop_fashion.jpeg';
+import imgAcc from '../../assets/img_shop_acc.jpg';
+import imgDigital from '../../assets/img_shop_digital.jpeg';
 
 const carousel = [
   {
     id: 1,
-    image: '/assets/img_shop_fashion.jpeg',
+    image: imgFashion,
     text: {
       title: '물빠진 청바지!',
       subText: '이제 막 도착한 패션 청바지를 구경해보세요',
@@ -17,7 +20,7 @@ const carousel = [
   },
   {
     id: 2,
-    image: '/assets/img_shop_acc.jpg',
+    image: imgAcc,
     text: {
       title: '반짝반짝 당신을 빛나게 해줄 악세사리!',
       subText: '다양한 악세사리 상품을 둘러보세요',
@@ -26,7 +29,7 @@ const carousel = [
   },
   {
     id: 3,
-    image: '/assets/img_shop_digital.jpeg',
+    image: imgDigital,
     text: {
       title: '신속한 업무처리!',
       subText: '다양한 디지털 상품을 둘러보세요',
