@@ -8,7 +8,7 @@ import { BsArrowRight } from 'react-icons/bs';
 const carousel = [
   {
     id: 1,
-    image: 'src/assets/img_shop_fashion.jpeg',
+    image: '/assets/img_shop_fashion.jpeg',
     text: {
       title: '물빠진 청바지!',
       subText: '이제 막 도착한 패션 청바지를 구경해보세요',
@@ -17,7 +17,7 @@ const carousel = [
   },
   {
     id: 2,
-    image: 'src/assets/img_shop_acc.jpg',
+    image: '/assets/img_shop_acc.jpg',
     text: {
       title: '반짝반짝 당신을 빛나게 해줄 악세사리!',
       subText: '다양한 악세사리 상품을 둘러보세요',
@@ -26,7 +26,7 @@ const carousel = [
   },
   {
     id: 3,
-    image: 'src/assets/img_shop_digital.jpeg',
+    image: '/assets/img_shop_digital.jpeg',
     text: {
       title: '신속한 업무처리!',
       subText: '다양한 디지털 상품을 둘러보세요',
