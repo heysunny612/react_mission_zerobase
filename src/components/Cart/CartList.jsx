@@ -7,14 +7,14 @@ import { Link } from 'react-router-dom';
 export default function CartList({ item }) {
   const { cartItems, setCartItems } = useCartContext();
   const handleQuantity = (id, quantity) => {
-    const found = cartItems.find((item) => item.id === id);
-    const idx = cartItems.indexOf(found);
-    const updateItem = { ...found, count: quantity };
-    const updatedCarts = [
-      ...cartItems.slice(0, idx),
-      updateItem,
-      ...cartItems.slice(idx + 1),
-    ];
+    const updatedCarts = cartItems.map((item) => {
+      if (item.id === id) {
+        return { ...item, count: quantity };
+      } else {
+        return item;
+      }
+    });
+
     if (quantity <= 0) {
       setCartItems(deleteCartItem(cartItems, id));
       return;

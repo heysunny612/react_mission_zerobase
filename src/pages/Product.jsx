@@ -26,13 +26,12 @@ export default function Product() {
   let count = 1; //클릭시 count
   // 같은 상품이 카드에 들어온다면?
   const handleQuantity = (id, quantity) => {
-    const foundIdx = cartItems.findIndex((item) => item.id === id);
-    const addItem = { ...product, count: quantity };
-    setCartItems([
-      ...cartItems.slice(0, foundIdx),
-      addItem,
-      ...cartItems.slice(foundIdx + 1),
-    ]);
+    setCartItems(
+      cartItems.map((item) => {
+        if (id) return { ...product, count: quantity };
+        else return item;
+      })
+    );
   };
   //카트에추가
   const handleCart = () => {
