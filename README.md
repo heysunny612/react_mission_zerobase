@@ -176,7 +176,7 @@ export default function Search({ mobileSearch }) {
 | --- | --- |
 | 구현 사항 | -Fake Store API 데이터 사용하여 쇼핑몰 구현  <br/>-키보드 KEY DOWN 이벤트 검색영역에 적용  <br/> -context 를 사용한 전역상태 관리 (장바구니,테마) <br/> -API 로딩시 스켈레톤 구현 |
 | 라이브러리 | react-query, react-responsive-carousel, react-router-dom, sass|
-| css 및 반응형  | SASS사용 , 반응형 구현  |
+| css 및 반응형  | SASS+Post CSS사용 , 반응형 구현  |
 | 배포 주소  | Netlify [https://sunny-trello.netlify.app/ ](https://zero-shop.netlify.app/)|
 | 소스 코드  | Github [https://github.com/heysunny612/ts-trello](https://github.com/heysunny612/react_mission_zerobase)|
 
