@@ -1,7 +1,8 @@
 # 리액트 프로젝트 제로베이스 프레임워크 미션 쇼핑몰 만들기 
 
-![1](https://github.com/heysunny612/react_mission_zerobase/assets/127499117/48e87a41-2e34-45fc-8a96-7144a03d50a0)
-
+<p align="center">
+    <img src="https://github.com/heysunny612/react_mission_zerobase/assets/127499117/48e87a41-2e34-45fc-8a96-7144a03d50a0" alt="1">
+</p>
 
 <br/>
 
@@ -40,7 +41,9 @@ export const useCartContext = () => useContext(CartContext);
 <br/>
 <br/>
 
-![2](https://github.com/heysunny612/react_mission_zerobase/assets/127499117/5f100f85-a004-48ae-bb71-1ee158601195)
+<p align="center">
+    <img src="https://github.com/heysunny612/react_mission_zerobase/assets/127499117/5f100f85-a004-48ae-bb71-1ee158601195" alt="2">
+</p>
 
 
 <br/>
